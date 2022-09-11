@@ -86,3 +86,14 @@
   bottom: 0px;
   left: 0px;
 }
+
+.trivia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  text-align: center;
+}
