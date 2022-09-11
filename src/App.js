@@ -2,11 +2,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Quizzical</h1>
-      <p>Play and improve your trivia skills</p>
-      <button>Start Quiz</button>
+    <div className='app'>
+      <div className="start">
+        <h1 className='heading'>Quizzical</h1>
+        <p className='paragraph'>Play and improve your trivia skills</p>
+        <button>Start Quiz</button>
+      </div>
     </div>
+
   );
 }
 
