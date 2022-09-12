@@ -9,12 +9,12 @@ const Trivia = (props) => {
 
         const answers = [...item.incorrect_answers, item.correct_answer]
 
-        console.log('answers '+answers)
+        console.log(answers)
 
         return (
             <div key={item.question} className='question'>
-                <h1 dangerouslySetInnerHTML={{ __html: item.question }}></h1>
-                <p key={item.incorrect_answers}>{item.incorrect_answers}</p>
+                <h1 dangerouslySetInnerHTML={{ __html: item.question }} className='question-heading'></h1>
+                <button key={item.incorrect_answers} dangerouslySetInnerHTML={{ __html: answers }} className='option'></button>
             </div>
         )
     })
