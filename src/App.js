@@ -15,8 +15,6 @@ function App() {
       .then(data => setTrivia(data));
   }, []);
 
-  console.log(trivia);
-
   function startGame() {
     return setStart(true);
   };
