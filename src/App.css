@@ -22,6 +22,12 @@
   margin-bottom: 40px;
 }
 
+.game{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .button {
   position: relative;
   width: 190px;
@@ -36,6 +42,20 @@
   line-height: 19px;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+#check-answer{
+  text-align: center;
+  width: 120px;
+  height: 35px;
+  background: #4D5B9E;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 10.24px;
+  line-height: 12px;
+  text-align: center;
+  color: #F5F7FB;
 }
 
 .button:hover {
@@ -54,7 +74,7 @@
   height: 100%;
   opacity: 0;
   transition: all 0.5s;
-  box-shadow: 0 0 10px 40px #828cbb;
+  box-shadow: 0 0 5px 20px #828cbb;
 }
 
 .button:active:after {

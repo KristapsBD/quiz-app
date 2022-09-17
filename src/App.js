@@ -24,6 +24,7 @@ function App() {
       {start ?
         <div className='game'>
           <Trivia data={trivia} />
+          <button className='button' id='check-answer' onClick={startGame}>Check answers</button>
         </div>
         :
         (
