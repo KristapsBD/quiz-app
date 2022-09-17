@@ -57,6 +57,7 @@
   line-height: 12px;
   text-align: center;
   color: #F5F7FB;
+  margin-bottom: 25px;
 }
 
 .button:hover {
@@ -160,5 +161,5 @@
   font-size: 16px;
   line-height: 19px;
   color: #293264;
-  max-width: 350px;
+  max-width: 400px;
 }
