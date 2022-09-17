@@ -124,6 +124,10 @@
   justify-content: center;
 }
 
+.clicked {
+  background-color: #D6DBF5;
+}
+
 .question-heading {
   font-weight: 700;
   font-size: 16px;
