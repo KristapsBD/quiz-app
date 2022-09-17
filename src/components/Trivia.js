@@ -17,6 +17,7 @@ const Trivia = (props) => {
             <div key={item.question} className='question'>
                 <h1 dangerouslySetInnerHTML={{ __html: item.question }} className='question-heading'></h1>
                 <Buttons answers={answers}/>
+                <div className='bottom-border'></div>
             </div>
         )
     })

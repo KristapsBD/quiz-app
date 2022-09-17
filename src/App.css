@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 .button {
@@ -120,6 +121,12 @@
   text-align: center;
 }
 
+.bottom-border{
+  border-bottom: 1px solid #DBDEF0;
+  width: 400px;
+  padding: 5px;
+}
+
 .option {
   font-weight: 500;
   font-size: 10.24px;
@@ -153,4 +160,5 @@
   font-size: 16px;
   line-height: 19px;
   color: #293264;
+  max-width: 350px;
 }
