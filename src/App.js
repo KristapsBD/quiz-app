@@ -3,6 +3,7 @@ import blobYellow from './images/yellowblob.png';
 import blobBlue from './images/blueblob.png';
 import { useState, useEffect } from 'react';
 import Trivia from './components/Trivia'
+import TriviaProperties from './TriviaProperties';
 
 function App() {
 
@@ -15,8 +16,14 @@ function App() {
       .then(data => setTrivia(data));
   }, []);
 
+  console.log(trivia)
+
   function startGame() {
     return setStart(true);
+  };
+
+  function checkAnswers() {
+
   };
 
   return (
@@ -24,7 +31,7 @@ function App() {
       {start ?
         <div className='game'>
           <Trivia data={trivia} />
-          <button className='button' id='check-answer' onClick={startGame}>Check answers</button>
+          <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>
         </div>
         :
         (
