@@ -5,10 +5,21 @@ import { useState, useEffect } from 'react';
 import Trivia from './components/Trivia'
 import Data from './Data';
 
+/*
+  TODO
+    -fix api fetch undefined error (remove Data.js)
+    -fix re render bug from randint in Button.js
+    -clean up unused vars
+
+*/
+
+
 function App() {
 
   const [start, setStart] = useState(false);
   const [trivia, setTrivia] = useState(Data);
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
+  const [showAnswers, setShowAnswers] = useState(false);
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=5')
@@ -30,7 +41,12 @@ function App() {
   };
 
   function checkAnswers() {
-
+    setShowAnswers(true);
+    for (let i = 0; i < 5; i++) {
+      if (triviaProperties[i].selectedAnswer === triviaProperties[i].correct_answer) {
+        setCorrectAnswerCount(prev => prev + 1)
+      }
+    }
   };
 
   return (
@@ -39,6 +55,7 @@ function App() {
         <div className='game'>
           <Trivia triviaProperties={triviaProperties} />
           <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>
+          {showAnswers && <div>You got {correctAnswerCount} / 5 answers right!</div>}
         </div>
         :
         (
