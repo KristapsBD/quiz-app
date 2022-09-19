@@ -3,12 +3,12 @@ import blobYellow from './images/yellowblob.png';
 import blobBlue from './images/blueblob.png';
 import { useState, useEffect } from 'react';
 import Trivia from './components/Trivia'
-import TriviaProperties from './TriviaProperties';
+import Data from './Data';
 
 function App() {
 
   const [start, setStart] = useState(false);
-  const [trivia, setTrivia] = useState();
+  const [trivia, setTrivia] = useState(Data);
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=5')
@@ -16,7 +16,14 @@ function App() {
       .then(data => setTrivia(data));
   }, []);
 
-  console.log(trivia)
+  let i = 0;
+  const triviaProperties = trivia.results.map(item => {
+    return {
+      ...item,
+      selectedAnswer: null,
+      questionId: i++
+    }
+  })
 
   function startGame() {
     return setStart(true);
@@ -30,7 +37,7 @@ function App() {
     <div className='app'>
       {start ?
         <div className='game'>
-          <Trivia data={trivia} />
+          <Trivia triviaProperties={triviaProperties} />
           <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>
         </div>
         :

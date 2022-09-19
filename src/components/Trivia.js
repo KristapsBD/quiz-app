@@ -3,15 +3,15 @@ import Buttons from './Buttons';
 
 const Trivia = (props) => {
 
-    const test = props.data.results
+    const test = props.triviaProperties
     console.log(test)
 
-    const questions = props.data.results.map(item => {
+    const questions = props.triviaProperties.map(item => {
 
         return (
             <div key={item.question} className='question'>
                 <h1 dangerouslySetInnerHTML={{ __html: item.question }} className='question-heading'></h1>
-                <Buttons item={item} />
+                <Buttons item={item} triviaProperties={props.triviaProperties} questionId={item.questionId}/>
                 <div className='bottom-border'></div>
             </div>
         )

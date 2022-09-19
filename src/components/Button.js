@@ -4,6 +4,8 @@ const Button = (props) => {
     const [clicked, setClicked] = useState(false);
 
     function handleClick() {
+        props.triviaProperties[props.questionId].selectedAnswer = props.answer;
+        console.log(props.triviaProperties[props.questionId])
         setClicked(prev => {
             return !prev;
         })

@@ -10,7 +10,7 @@ const Buttons = (props) => {
 
     return (
         answers.map(answer => {
-            return <Button key={answer} answer={answer} correctIndex={randIndex}/>
+            return <Button key={answer} answer={answer} correctIndex={randIndex} triviaProperties={props.triviaProperties} questionId={props.questionId} />
         })
     )
 }
