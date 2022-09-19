@@ -53,7 +53,7 @@ function App() {
     <div className='app'>
       {start ?
         <div className='game'>
-          <Trivia triviaProperties={triviaProperties} />
+          <Trivia triviaProperties={triviaProperties} showAnswers={showAnswers}/>
           <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>
           {showAnswers && <div>You got {correctAnswerCount} / 5 answers right!</div>}
         </div>

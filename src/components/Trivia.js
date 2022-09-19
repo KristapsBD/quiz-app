@@ -11,7 +11,7 @@ const Trivia = (props) => {
         return (
             <div key={item.question} className='question'>
                 <h1 dangerouslySetInnerHTML={{ __html: item.question }} className='question-heading'></h1>
-                <Buttons item={item} triviaProperties={props.triviaProperties} questionId={item.questionId}/>
+                <Buttons item={item} triviaProperties={props.triviaProperties} questionId={item.questionId} showAnswers={props.showAnswers}/>
                 <div className='bottom-border'></div>
             </div>
         )

@@ -16,7 +16,7 @@ const Buttons = (props) => {
 
     return (
         answers.map(answer => {
-            return <Button key={answer} onChange={activeButton} active={active} answer={answer} correctIndex={randIndex} triviaProperties={props.triviaProperties} questionId={props.questionId} />
+            return <Button key={answer} onChange={activeButton} active={active} answer={answer} correctIndex={randIndex} triviaProperties={props.triviaProperties} questionId={props.questionId} showAnswers={props.showAnswers}/>
         })
     )
 }
