@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './Button';
 
 const Buttons = (props) => {
+
+    const [active, setActive] = useState(false);
+
+    function activeButton(value){
+        setActive(value)
+     }
 
     let answers = [...props.item.incorrect_answers];
     const randIndex = Math.floor(Math.random() * answers.length);
@@ -10,7 +16,7 @@ const Buttons = (props) => {
 
     return (
         answers.map(answer => {
-            return <Button key={answer} answer={answer} correctIndex={randIndex} triviaProperties={props.triviaProperties} questionId={props.questionId} />
+            return <Button key={answer} onChange={activeButton} active={active} answer={answer} correctIndex={randIndex} triviaProperties={props.triviaProperties} questionId={props.questionId} />
         })
     )
 }

@@ -1,18 +1,15 @@
 import React, {useState} from 'react'
 
 const Button = (props) => {
-    const [clicked, setClicked] = useState(false);
 
-    function handleClick() {
+    function handleClick(answer){
         props.triviaProperties[props.questionId].selectedAnswer = props.answer;
         console.log(props.triviaProperties[props.questionId])
-        setClicked(prev => {
-            return !prev;
-        })
+        props.onChange(answer);
     }
 
     return (
-        <button dangerouslySetInnerHTML={{ __html: props.answer }} key={props.answer} onClick={handleClick} className={`option ${clicked ? 'clicked' : ''}`}></button>
+        <button dangerouslySetInnerHTML={{ __html: props.answer }} key={props.answer} onClick={() => handleClick(props.answer)} className={`option ${props.active === props.answer ? 'clicked' : ''}`}></button>
     )
 }
 
