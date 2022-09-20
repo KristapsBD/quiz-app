@@ -25,7 +25,7 @@ function App() {
     fetch('https://opentdb.com/api.php?amount=5')
       .then(response => response.json())
       .then(data => setTrivia(data));
-  }, []);
+  }, [start]);
 
   let i = 0;
   const triviaProperties = trivia.results.map(item => {
@@ -37,6 +37,8 @@ function App() {
   })
 
   function startGame() {
+    setCorrectAnswerCount(0);
+    setShowAnswers(false);
     return setStart(true);
   };
 
@@ -49,13 +51,17 @@ function App() {
     }
   };
 
+  function reset(){
+    setStart(false);
+  };
+
   return (
     <div className='app'>
       {start ?
         <div className='game'>
           <Trivia triviaProperties={triviaProperties} showAnswers={showAnswers}/>
-          <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>
-          {showAnswers && <div>You got {correctAnswerCount} / 5 answers right!</div>}
+          {showAnswers && <div className='answer-count'>You got {correctAnswerCount} / 5 answers right!</div>}
+          { showAnswers ? <button className='button' id='check-answer' onClick={reset}>Play again</button> : <button className='button' id='check-answer' onClick={checkAnswers}>Check answers</button>}
         </div>
         :
         (

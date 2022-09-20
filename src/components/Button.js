@@ -8,17 +8,20 @@ const Button = (props) => {
     }
 
     let styles = '';
-    if (props.active === props.answer && props.active === props.triviaProperties[props.questionId].correct_answer){
-        styles = 'correct'
-    } else if (props.active !== props.answer){
-        styles = 'other'
-    } else {
+    console.log(props.active)
+    console.log(props.answer)
+    console.log(props.triviaProperties[props.questionId].correct_answer)
+    console.log(props.triviaProperties)
+    
+    if (props.active === props.answer && props.active !== props.triviaProperties[props.questionId].correct_answer){
         styles = 'incorrect'
+    } else if (props.active !== props.answer && props.answer !== props.triviaProperties[props.questionId].correct_answer ){
+        styles = 'other'
     }
 
     if (props.showAnswers){
         return (
-            <button dangerouslySetInnerHTML={{ __html: props.answer }} key={props.answer} className={`option ${styles}`}></button>
+            <button dangerouslySetInnerHTML={{ __html: props.answer }} key={props.answer} className={`option ${styles} ${ props.answer === props.triviaProperties[props.questionId].correct_answer ? 'correct' : ''}`}></button>
         )
     } else {
         return (

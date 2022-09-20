@@ -178,3 +178,12 @@
   border: 0;
   color: #7f84a2;
 }
+
+.answer-count {
+  font-weight: 700;
+  font-size: 12.8px;
+  line-height: 15px;
+  text-align: center;
+  color: #293264;
+  margin-top: 20px;
+}
